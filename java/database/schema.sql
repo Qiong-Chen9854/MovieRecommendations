@@ -1,6 +1,6 @@
 BEGIN TRANSACTION;
 
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS movie_person, movie_genre,genre, person, user_favourite_movie,movie_comment,movie,users;
 
 CREATE TABLE users (
 	user_id SERIAL,
@@ -10,10 +10,6 @@ CREATE TABLE users (
 	CONSTRAINT PK_user PRIMARY KEY (user_id)
 );
 
-
--- create tables
-
-DROP TABLE IF EXISTS movie_person, person, movie ;
 
 CREATE TABLE movie(
 	movie_id serial PRIMARY KEY,
@@ -35,6 +31,37 @@ CREATE TABLE movie_person(
 	PRIMARY KEY (movie_id,person_id),
 	FOREIGN KEY (movie_id) REFERENCES movie(movie_id),
 	FOREIGN KEY (person_id) REFERENCES person(person_id)
-)
+);
+
+CREATE TABLE genre(
+	genre_id serial PRIMARY KEY,
+	genre_name varchar(50)
+);
+
+CREATE TABLE movie_genre(
+	movie_id int,
+	genre_id int,
+	PRIMARY KEY (movie_id, genre_id),
+	FOREIGN KEY (movie_id) REFERENCES movie(movie_id),
+	FOREIGN KEY (genre_id) REFERENCES genre(genre_id)
+);
+
+CREATE TABLE user_favourite_movie(
+	user_id int,
+	movie_id int,
+	PRIMARY KEY (user_id,movie_id),
+	FOREIGN KEY (user_id) REFERENCES users(user_id),
+	FOREIGN KEY (movie_id) REFERENCES movie(movie_id)
+);
+
+CREATE TABLE movie_comment(
+	comment_id serial PRIMARY KEY,
+	movie_id int,
+	comment_to_movie text,
+	user_id int,
+	FOREIGN KEY (movie_id) REFERENCES movie(movie_id),
+	FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
 
 COMMIT TRANSACTION;
