@@ -3,127 +3,142 @@ BEGIN TRANSACTION;
 INSERT INTO users (username,password_hash,role) VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
 INSERT INTO users (username,password_hash,role) VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
 
+-- Insert movies
 INSERT INTO movie (title, release_date, description) VALUES 
-('The Shawshank Redemption', '1994-09-23', 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.'),
-('The Godfather', '1972-03-24', 'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.'),
-('The Dark Knight', '2008-07-18', 'When the menace known as The Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham.'),
-('Pulp Fiction', '1994-10-14', 'The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.'),
-('Forrest Gump', '1994-07-06', 'The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal, and other historical events unfold from the perspective of an Alabama man with an IQ of 75.'),
-('Inception', '2010-07-16', 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO.'),
-('The Matrix', '1999-03-31', 'A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.'),
-('Fight Club', '1999-10-15', 'An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.'),
-('Goodfellas', '1990-09-21', 'The story of Henry Hill and his life in the mob, covering his relationship with his wife Karen Hill and his mob partners Jimmy Conway and Tommy DeVito.'),
-('The Lord of the Rings: The Return of the King', '2003-12-17', 'Gandalf and Aragorn lead the World of Men against Sauron''s army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.'),
-('The Silence of the Lambs', '1991-02-14', 'A young F.B.I. cadet must receive the help of an incarcerated and manipulative cannibal killer to catch another serial killer, a madman who skins his victims.'),
-('Schindler''s List', '1993-12-15', 'In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis.'),
-('The Lion King', '1994-06-15', 'Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.'),
-('Gladiator', '2000-05-05', 'A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery.'),
-('The Usual Suspects', '1995-08-16', 'A sole survivor tells of the twisty events leading up to a horrific gun battle on a boat, which begin when five criminals meet at a random police lineup.'),
-('Se7en', '1995-09-22', 'Two detectives, a rookie and a veteran, hunt a serial killer who uses the seven deadly sins as his motives.'),
-('Interstellar', '2014-11-07', 'A team of explorers travel through a wormhole in space in an attempt to ensure humanity''s survival.'),
-('The Green Mile', '1999-12-10', 'The lives of guards on Death Row are affected by one of their charges: a black man accused of child murder and rape, yet who has a mysterious gift.'),
-('Braveheart', '1995-05-24', 'Scottish warrior William Wallace leads his countrymen in a rebellion to free his homeland from the tyranny of King Edward I of England.'),
-('The Departed', '2006-10-06', 'An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston.');
+('Dune', '2021-10-22', 'Paul Atreides leads nomadic tribes in a battle to control the desert planet Arrakis.'),
+('Avatar: The Way of Water', '2022-12-16', 'Jake Sully lives with his newfound family formed on the extrasolar moon Pandora.'),
+('Spider-Man: No Way Home', '2021-12-17', 'Peter Parker seeks Doctor Strange’s help to make people forget he’s Spider-Man.'),
+('The Batman', '2022-03-04', 'Batman uncovers corruption in Gotham City that connects to his own family.'),
+('Top Gun: Maverick', '2022-05-27', 'Pete Mitchell confronts ghosts of his past while training a new squad of Top Gun graduates.'),
+('Black Panther: Wakanda Forever', '2022-11-11', 'The people of Wakanda fight to protect their home from intervening world powers.'),
+('No Time to Die', '2021-10-08', 'James Bond has left active service. His peace is short-lived when Felix Leiter enlists his help.'),
+('Jurassic World: Dominion', '2022-06-10', 'Dinosaurs now live—and hunt—alongside humans all over the world.'),
+('Doctor Strange in the Multiverse of Madness', '2022-05-06', 'Doctor Strange, with the help of allies, traverses the mind-bending and dangerous alternate realities of the Multiverse to confront a mysterious new adversary.'),
+('Thor: Love and Thunder', '2022-07-08', 'Thor enlists the help of Valkyrie, Korg, and Jane Foster to fight Gorr the God Butcher.'),
+('Guardians of the Galaxy Vol. 3', '2023-05-05', 'The Guardians of the Galaxy try to make the universe a better place.'),
+('The Flash', '2023-06-16', 'Barry Allen travels back in time to prevent his mother’s murder, which traps him in an alternate reality without metahumans.'),
+('Oppenheimer', '2023-07-21', 'The story of American scientist J. Robert Oppenheimer and his role in the development of the atomic bomb.'),
+('Mission: Impossible – Dead Reckoning Part One', '2023-07-14', 'Ethan Hunt and his IMF team must track down a terrifying new weapon that threatens all of humanity.'),
+('Fast X', '2023-05-19', 'Dom Toretto and his family must face the most lethal opponent they’ve ever encountered.'),
+('Indiana Jones and the Dial of Destiny', '2023-06-30', 'Daredevil archaeologist Indiana Jones races against time to retrieve a legendary artifact.'),
+('The Marvels', '2023-11-10', 'Captain Marvel, Monica Rambeau, and Ms. Marvel team up in an adventure.'),
+('Dungeons & Dragons: Honor Among Thieves', '2023-03-31', 'A charming thief and a band of unlikely adventurers embark on an epic quest to retrieve a lost relic.'),
+('The Matrix Resurrections', '2021-12-22', 'Return to a world of two realities: one, everyday life; the other, what lies behind it.'),
+('Tenet', '2020-08-26', 'A secret agent embarks on a dangerous, time-bending mission to prevent the start of World War III.');
 
+-- Insert genres
 INSERT INTO genre (genre_name) VALUES 
-('Drama'),
-('Crime'),
+('Science Fiction'),
 ('Action'),
 ('Adventure'),
-('Thriller');
+('Thriller'),
+('Fantasy');
 
-
+-- Insert people
 INSERT INTO person (first_name, last_name, role) VALUES 
-('Morgan', 'Freeman', 'Actor'),
-('Tim', 'Robbins', 'Actor'),
-('Marlon', 'Brando', 'Actor'),
-('Christian', 'Bale', 'Actor'),
-('Robert', 'De Niro', 'Actor'),
-('Leonardo', 'DiCaprio', 'Actor'),
-('Matt', 'Damon', 'Actor'),
-('Quentin', 'Tarantino', 'Director'),
+('Denis', 'Villeneuve', 'Director'),
+('Chloe', 'Zhao', 'Director'),
+('Tom', 'Holland', 'Actor'),
+('Matt', 'Reeves', 'Director'),
+('Tom', 'Cruise', 'Actor'),
+('Letitia', 'Wright', 'Actor'),
+('Daniel', 'Craig', 'Actor'),
+('Colin', 'Trevorrow', 'Director'),
+('Benedict', 'Cumberbatch', 'Actor'),
+('Chris', 'Hemsworth', 'Actor'),
+('James', 'Gunn', 'Director'),
+('Ezra', 'Miller', 'Actor'),
 ('Christopher', 'Nolan', 'Director'),
-('Steven', 'Spielberg', 'Director');
+('Hayley', 'Atwell', 'Actor'),
+('Vin', 'Diesel', 'Actor'),
+('Harrison', 'Ford', 'Actor'),
+('Brie', 'Larson', 'Actor'),
+('Chris', 'Pine', 'Actor'),
+('Keanu', 'Reeves', 'Actor'),
+('John', 'David', 'Actor');
 
+-- Associate movies with people
 INSERT INTO movie_person (movie_id, person_id) VALUES 
-(1, 1),  -- Morgan Freeman in The Shawshank Redemption
-(1, 2),  -- Tim Robbins in The Shawshank Redemption
-(2, 3),  -- Marlon Brando in The Godfather
-(3, 4),  -- Christian Bale in The Dark Knight
-(4, 8),  -- Quentin Tarantino directing Pulp Fiction
-(5, 1),  -- Morgan Freeman in Forrest Gump
-(6, 9),  -- Christopher Nolan directing Inception
-(7, 6),  -- Leonardo DiCaprio in The Matrix
-(8, 5),  -- Robert De Niro in Fight Club
-(9, 5),  -- Robert De Niro in Goodfellas
-(10, 10), -- Steven Spielberg directing The Lord of the Rings: The Return of the King
-(11, 1), -- Morgan Freeman in The Silence of the Lambs
-(12, 9), -- Christopher Nolan directing Schindler's List
-(13, 6), -- Leonardo DiCaprio in The Lion King
-(14, 5), -- Robert De Niro in Gladiator
-(15, 8), -- Quentin Tarantino directing The Usual Suspects
-(16, 6), -- Leonardo DiCaprio in Se7en
-(17, 7), -- Matt Damon in Interstellar
-(18, 1), -- Morgan Freeman in The Green Mile
-(19, 4), -- Christian Bale in Braveheart
-(20, 7); -- Matt Damon in The Departed
- 
- 
- INSERT INTO movie_genre (movie_id, genre_id) VALUES 
-(1, 1),  -- The Shawshank Redemption is a Drama
-(2, 2),  -- The Godfather is a Crime film
-(3, 3),  -- The Dark Knight is an Action film
-(4, 1),  -- Pulp Fiction is a Drama
-(5, 1),  -- Forrest Gump is a Drama
-(6, 3),  -- Inception is an Action film
-(7, 4),  -- The Matrix is an Adventure film
-(8, 2),  -- Fight Club is a Crime film
-(9, 2),  -- Goodfellas is a Crime film
-(10, 4), -- The Lord of the Rings: The Return of the King is an Adventure film
-(11, 5), -- The Silence of the Lambs is a Thriller
-(12, 1), -- Schindler's List is a Drama
-(13, 4), -- The Lion King is an Adventure film
-(14, 3), -- Gladiator is an Action film
-(15, 5), -- The Usual Suspects is a Thriller
-(16, 5), -- Se7en is a Thriller
-(17, 4), -- Interstellar is an Adventure film
-(18, 1), -- The Green Mile is a Drama
-(19, 4), -- Braveheart is an Adventure film
-(20, 5); -- The Departed is a Thriller
- 
+(1, 1),  -- Denis Villeneuve directed Dune
+(2, 3),  -- Tom Holland starred in Avatar: The Way of Water
+(3, 3),  -- Tom Holland starred in Spider-Man: No Way Home
+(4, 4),  -- Matt Reeves directed The Batman
+(5, 5),  -- Tom Cruise starred in Top Gun: Maverick
+(6, 6),  -- Letitia Wright starred in Black Panther: Wakanda Forever
+(7, 7),  -- Daniel Craig starred in No Time to Die
+(8, 8),  -- Colin Trevorrow directed Jurassic World: Dominion
+(9, 9),  -- Benedict Cumberbatch starred in Doctor Strange in the Multiverse of Madness
+(10, 10),  -- Chris Hemsworth starred in Thor: Love and Thunder
+(11, 11),  -- James Gunn directed Guardians of the Galaxy Vol. 3
+(12, 12),  -- Ezra Miller starred in The Flash
+(13, 13),  -- Christopher Nolan directed Oppenheimer
+(14, 14),  -- Hayley Atwell starred in Mission: Impossible – Dead Reckoning Part One
+(15, 15),  -- Vin Diesel starred in Fast X
+(16, 16),  -- Harrison Ford starred in Indiana Jones and the Dial of Destiny
+(17, 17),  -- Brie Larson starred in The Marvels
+(18, 18),  -- Chris Pine starred in Dungeons & Dragons: Honor Among Thieves
+(19, 19),  -- Keanu Reeves starred in The Matrix Resurrections
+(20, 20);  -- John David starred in Tenet
+
+-- Associate movies with genres
+INSERT INTO movie_genre (movie_id, genre_id) VALUES 
+(1, 1),  -- Dune is Science Fiction
+(2, 1),  -- Avatar: The Way of Water is Science Fiction
+(3, 2),  -- Spider-Man: No Way Home is Action
+(4, 2),  -- The Batman is Action
+(5, 3),  -- Top Gun: Maverick is Adventure
+(6, 3),  -- Black Panther: Wakanda Forever is Adventure
+(7, 2),  -- No Time to Die is Action
+(8, 1),  -- Jurassic World: Dominion is Science Fiction
+(9, 1),  -- Doctor Strange in the Multiverse of Madness is Science Fiction
+(10, 3), -- Thor: Love and Thunder is Adventure
+(11, 3), -- Guardians of the Galaxy Vol. 3 is Adventure
+(12, 2), -- The Flash is Action
+(13, 4), -- Oppenheimer is Thriller
+(14, 3), -- Mission: Impossible – Dead Reckoning Part One is Adventure
+(15, 2), -- Fast X is Action
+(16, 3), -- Indiana Jones and the Dial of Destiny is Adventure
+(17, 1), -- The Marvels is Science Fiction
+(18, 1), -- Dungeons & Dragons: Honor Among Thieves is Fantasy
+(19, 1), -- The Matrix Resurrections is Science Fiction
+(20, 4); -- Tenet is Thriller
+
+-- Associate user favorite movies
 INSERT INTO user_favourite_movie (user_id, movie_id) VALUES 
-(1, 1),  -- User 1 likes The Shawshank Redemption
-(1, 3),  -- User 1 likes The Dark Knight
-(1, 6),  -- User 1 likes Inception
-(1, 7),  -- User 1 likes The Matrix
-(1, 10), -- User 1 likes The Lord of the Rings: The Return of the King
-(1, 18), -- User 1 likes The Green Mile
-(2, 2),  -- User 2 likes The Godfather
-(2, 9),  -- User 2 likes Goodfellas
-(2, 14), -- User 2 likes Gladiator
-(2, 20); -- User 2 likes The Departed
- 
- 
- INSERT INTO movie_comment (movie_id, comment_to_movie, user_id) VALUES 
-(1, 'A masterpiece of storytelling.', 1),
-(2, 'An iconic classic!', 2),
-(3, 'An incredible movie with a great plot.', 1),
-(4, 'Tarantino at his best.', 2),
-(5, 'A heartwarming story.', 1),
-(6, 'Mind-bending and thought-provoking.', 2),
-(7, 'A revolutionary film in sci-fi.', 1),
-(8, 'An intriguing story about the human psyche.', 2),
-(9, 'Great portrayal of mob life.', 1),
-(10, 'Epic in every sense of the word.', 2),
-(11, 'Chilling and captivating.', 1),
-(12, 'A poignant film on humanity.', 2),
-(13, 'A beautiful animated classic.', 1),
-(14, 'An epic historical drama.', 2),
-(15, 'Keeps you guessing till the end.', 1),
-(16, 'Dark and gripping.', 2),
-(17, 'A visually stunning space journey.', 1),
-(18, 'Emotionally powerful and moving.', 2),
-(19, 'An inspiring story of bravery.', 1),
-(20, 'A masterclass in storytelling and suspense.', 2);
- 
+(1, 1),  -- User 1 likes Dune
+(1, 5),  -- User 1 likes Top Gun: Maverick
+(1, 9),  -- User 1 likes Doctor Strange in the Multiverse of Madness
+(1, 11), -- User 1 likes Guardians of the Galaxy Vol. 3
+(1, 15), -- User 1 likes Fast X
+(2, 2),  -- User 2 likes Avatar: The Way of Water
+(2, 6),  -- User 2 likes Black Panther: Wakanda Forever
+(2, 12), -- User 2 likes The Flash
+(2, 18), -- User 2 likes Dungeons & Dragons: Honor Among Thieves
+(2, 20); -- User 2 likes Tenet
+
+-- Insert movie comments
+INSERT INTO movie_comment (movie_id, comment_to_movie, user_id) VALUES 
+(1, 'An epic sci-fi masterpiece!', 1),
+(2, 'Visually stunning and emotionally resonant.', 2),
+(3, 'A thrilling and emotional ride.', 1),
+(4, 'A dark and gripping take on Batman.', 1),
+(5, 'Amazing aerial sequences!', 2),
+(6, 'A worthy sequel with powerful performances.', 1),
+(7, 'A fitting end to Daniel Craig''s Bond.', 1),
+(8, 'Dinosaurs like never before!', 2),
+(9, 'Mind-bending and visually spectacular.', 1),
+(10, 'Funny and action-packed.', 2),
+(11, 'A fantastic addition to the series.', 1),
+(12, 'A fresh and exciting take on The Flash.', 2),
+(13, 'Gripping and thought-provoking.', 1),
+(14, 'Non-stop action and intrigue.', 2),
+(15, 'Explosive and thrilling.', 1),
+(16, 'A nostalgic and exciting adventure.', 2),
+(17, 'A cosmic adventure with heart.', 1),
+(18, 'A fun and fantastical ride.', 2),
+(19, 'A mind-bending return to the Matrix.', 1),
+(20, 'Incredible action and storytelling.', 2);
+
+
+
 COMMIT TRANSACTION;
