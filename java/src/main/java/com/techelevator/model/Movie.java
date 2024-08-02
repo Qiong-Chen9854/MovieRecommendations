@@ -6,10 +6,10 @@ import java.util.Objects;
 
 public class Movie {
     int movieId;
-    String movieName;
+    String movieName; // title
     LocalDate publishDate;
     String description;
-    String category;
+    String category; // genre
 
     Person director;
     List<Person> actors;
