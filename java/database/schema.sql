@@ -10,7 +10,6 @@ CREATE TABLE users (
 	CONSTRAINT PK_user PRIMARY KEY (user_id)
 );
 
-
 CREATE TABLE movie(
 	movie_id serial PRIMARY KEY,
 	title varchar(225) NOT NULL,
@@ -62,6 +61,5 @@ CREATE TABLE movie_comment(
 	FOREIGN KEY (movie_id) REFERENCES movie(movie_id),
 	FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
-
 
 COMMIT TRANSACTION;

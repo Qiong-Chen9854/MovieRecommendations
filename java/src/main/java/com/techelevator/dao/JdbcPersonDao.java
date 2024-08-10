@@ -5,11 +5,12 @@ import com.techelevator.model.Person;
 import org.springframework.jdbc.CannotGetJdbcConnectionException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.List;
-
+@Component
 public class JdbcPersonDao implements PersonDao{
     private JdbcTemplate jdbcTemplate;
 
@@ -46,7 +47,7 @@ public class JdbcPersonDao implements PersonDao{
         try{
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql,movieId,role);
             while(results.next()){
-                actors.add(mapRowToPerson(results);
+                actors.add(mapRowToPerson(results));
             }
         } catch(CannotGetJdbcConnectionException e){
             throw new DaoException("Unable to connect to server or database",e);
