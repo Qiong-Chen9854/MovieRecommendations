@@ -1,13 +1,26 @@
 import { createStore as _createStore } from 'vuex';
 import axios from 'axios';
+import MovieService from '../services/MovieService';
 
 export function createStore(currentToken, currentUser) {
   let store = _createStore({
     state: {
       token: currentToken || '',
-      user: currentUser || {}
+      user: currentUser || {},
+      moviesTopPick:{}
+    },
+    actions:{
+      getMovieTopPick(context){
+        MovieService.getTopPickMovies().then(response => {
+          context.commit('SET_MOVIES_TOP_PICK', response.data);
+        })
+        .catch(err => console.error(err));
+      }
     },
     mutations: {
+      SET_MOVIES_TOP_PICK(state,movies){
+        state.moviesTopPick = movies;
+      },
       SET_AUTH_TOKEN(state, token) {
         state.token = token;
         localStorage.setItem('token', token);
