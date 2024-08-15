@@ -16,9 +16,9 @@ export default {
 };
 </script>
 <style>
-.home{
-  
-}
+/* .home{
+ 
+} */
 
 
 </style>
