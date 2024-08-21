@@ -3,10 +3,7 @@ package com.techelevator.controller;
 import com.techelevator.dao.MovieDao;
 import com.techelevator.dao.PersonDao;
 import com.techelevator.model.Movie;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @CrossOrigin
@@ -22,5 +19,10 @@ public class MovieController {
     @RequestMapping(path="/movies", method= RequestMethod.GET)
     public List<Movie> getTopPickMovie(){
         return movieDao.getTenRecentMovies();
+    }
+
+    @RequestMapping(path="/movies/id", method=RequestMethod.GET)
+    public Movie getMovieById(@PathVariable int id){
+        return movieDao.getMovieByMovieId(id);
     }
 }

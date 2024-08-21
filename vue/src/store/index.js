@@ -7,7 +7,8 @@ export function createStore(currentToken, currentUser) {
     state: {
       token: currentToken || '',
       user: currentUser || {},
-      moviesTopPick:{}
+      moviesTopPick:{},
+      singleMovie:{},
     },
     actions:{
       getMovieTopPick(context){

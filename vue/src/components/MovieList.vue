@@ -31,6 +31,5 @@ export default{
   justify-content: space-evenly;
   margin-top: 12px;
   gap:12px;
-  
 }
 </style>

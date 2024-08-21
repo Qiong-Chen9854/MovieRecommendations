@@ -44,6 +44,26 @@ public class JdbcMovieDao implements MovieDao{
         return movies;
     }
 
+    @Override
+    public Movie getMovieByMovieId(int movieId) {
+        Movie movie = null;
+        String sql = "SELECT m.movie_id,m.title,m.release_date,m.description,g.genre_name\n" +
+                "FROM movie m\n" +
+                "JOIN movie_genre mg ON mg.movie_id = m.movie_id\n" +
+                "JOIN genre g ON g.genre_id = mg.genre_id " +
+                "WHERE m.movie_id = ?";
+
+        try{
+            SqlRowSet results = jdbcTemplate.queryForRowSet(sql,movieId);
+            while(results.next()){
+                movie = mapRowToMovie(results);
+            }
+        } catch(CannotGetJdbcConnectionException e){
+            throw new DaoException("Unable to connect to server or database",e);
+        }
+        return movie;
+    }
+
     private Movie mapRowToMovie(SqlRowSet row){
         Movie movie = new Movie();
         movie.setMovieId(row.getInt("movie_id"));

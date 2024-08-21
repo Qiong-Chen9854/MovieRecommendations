@@ -14,7 +14,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   color:aliceblue;
   /* background-image: url('/path/to/your/image.jpg'); */
-  background-color:#021526;
+  background-color:#021526; 
   background-size: cover;
   background-position: center center;
   height: 100vh;
