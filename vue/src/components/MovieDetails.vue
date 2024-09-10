@@ -9,16 +9,25 @@
   </div>
 </template>
 <script>
-export default{
-  data(){
-    return{
-      currentMovie:{},
+export default {
+  data() {
+    return {
+      // currentMovie: {},
     }
   },
 
-  mounted(){
+  computed: {
+    currentMovie() {
+      return this.$store.state.singleMovie;
+    }
+  },
+
+
+  mounted() {
     const currentMovieId = this.$route.params.movieId;
-    this.currentMovie = this.$store.state.moviesTopPick.find(m => m.movieId === currentMovieId);
+    this.$store.dispatch('getSingleMove', currentMovieId);
+    // this.currentMovie = this.$store.state.singleMovie;
+    // console.log(this.currentMovie);
   }
 }
 

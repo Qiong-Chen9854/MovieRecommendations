@@ -16,9 +16,18 @@ export function createStore(currentToken, currentUser) {
           context.commit('SET_MOVIES_TOP_PICK', response.data);
         })
         .catch(err => console.error(err));
+      },
+      getSingleMove(context,id){
+        MovieService.getSingleMovieById(id).then(response =>{
+          context.commit('SET_SINGLE_MOVIE',response.data);
+        })
+        .catch(err => console.error(err));
       }
     },
     mutations: {
+      SET_SINGLE_MOVIE(state,movie){
+        state.singleMovie = movie;
+      },
       SET_MOVIES_TOP_PICK(state,movies){
         state.moviesTopPick = movies;
       },

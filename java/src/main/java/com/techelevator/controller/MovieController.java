@@ -3,11 +3,13 @@ package com.techelevator.controller;
 import com.techelevator.dao.MovieDao;
 import com.techelevator.dao.PersonDao;
 import com.techelevator.model.Movie;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 @CrossOrigin
 @RestController
+@PreAuthorize("permitAll")
 public class MovieController {
     private MovieDao movieDao;
     private PersonDao personDao;
@@ -21,7 +23,7 @@ public class MovieController {
         return movieDao.getTenRecentMovies();
     }
 
-    @RequestMapping(path="/movies/id", method=RequestMethod.GET)
+    @RequestMapping(path="/movies/{id}", method=RequestMethod.GET)
     public Movie getMovieById(@PathVariable int id){
         return movieDao.getMovieByMovieId(id);
     }
